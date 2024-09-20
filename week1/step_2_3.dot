@@ -1,0 +1,16 @@
+digraph G {
+    "TTG" -> "TGA";
+    "TCA" -> "CAT";
+    "TCT" -> "CTT";
+    "TGA" -> "GAT";
+    "TTC" -> "TCA";
+    "TTA" -> "TAT";
+    "TTC" -> "TCT";
+    "ATT" -> "TTC";
+    "TAT" -> "ATT";
+    "ATT" -> "TTG";
+    "GAT" -> "ATT";
+    "ATT" -> "TTT";
+    "CAT" -> "ATT";
+    "CTT" -> "TTA";
+}
