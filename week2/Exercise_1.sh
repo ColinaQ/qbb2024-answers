@@ -12,7 +12,9 @@ bedtools merge -i cCREs_chr1.bed > merged_cCREs_chr1.bed
 
 bedtools subtract -a merged_genes_chr1.bed -b merged_exons_chr1.bed > introns_chr1.bed
 
-bedtools subtract -a merged_genes_chr1.bed -b merged_exons_chr1.bed merged_cCREs_chr1.bed introns_chr1.bed > other_chr1.bed
-
+bedtools subtract -a genes_chr1.bed -b exons_chr1.bed | \
+bedtools subtract -a - -b cCREs_chr1.bed | \
+bedtools subtract -a - -b introns_chr1.bed > other_chr1.bed
+bedtools sort -i other_chr1.bed > other_chr1.bed
 
 
