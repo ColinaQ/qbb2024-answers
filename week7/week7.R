@@ -18,9 +18,12 @@ dds <- DESeqDataSetFromMatrix(countData = counts_df,
 
 vsd <- vst(dds)
 
-sex_PCA <- plotPCA(vsd, intgroup = "SEX")
-age_PCA <- plotPCA(vsd, intgroup = "AGE")
-dthhrdy_PCA <- plotPCA(vsd, intgroup = "DTHHRDY")
+sex_PCA <- plotPCA(vsd, intgroup = "SEX") + 
+  labs(title="PCA results by Sex",color="Sex")
+age_PCA <- plotPCA(vsd, intgroup = "AGE") +
+  labs(title="PCA results by Age",color="Age Group")
+dthhrdy_PCA <- plotPCA(vsd, intgroup = "DTHHRDY") +
+  labs(title="PCA results by Cause of Death",color="Cause of Death")
 
 ggsave("exer1_sexPCA.png",sex_PCA)
 ggsave("exer1_agePCA.png",age_PCA)
